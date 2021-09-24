@@ -4,15 +4,17 @@
 #include <SFML/Graphics.hpp>
 #include "kinematic.h"
 
-class Character
-{
+// Character Class
+class Character {
 private:
     Kinematic state;
+    float window_width;
+    float window_height;
 
 public:
     sf::CircleShape entity;
 
-    Character(float i_position[2], float i_orientation, sf::Color color);
+    Character(float i_position[2], sf::Color color, float width, float height);
     Character() = default;
 
     void updateState(Steering steering, float time);

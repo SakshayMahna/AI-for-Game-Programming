@@ -2,7 +2,7 @@
 #include "seek.h"
 #include "kinematic.h"
 
-const float MAX_SPEED = 5.0;
+const float MAX_SPEED = 1.0;
 
 Steering kinematic_seek(Kinematic target, Kinematic character) {
     // Initialize steering output

@@ -19,32 +19,6 @@ int main()
     float c2_position[2] = {width/4, height/2};
     Character c2 = Character(c2_position, 0, sf::Color::Red);
 
-    // Constant Steering
-    Steering right_steering;
-    right_steering.linear[0] = 1;
-    right_steering.linear[1] = 0;
-    right_steering.angular = 0;
-
-    Steering left_steering;
-    left_steering.linear[0] = -1;
-    left_steering.linear[1] = 0;
-    left_steering.angular = 0;
-
-    Steering up_steering;
-    up_steering.linear[0] = 0;
-    up_steering.linear[1] = -1;
-    up_steering.angular = 0;
-
-    Steering down_steering;
-    down_steering.linear[0] = 0;
-    down_steering.linear[1] = 1;
-    down_steering.angular = 0;
-
-    Steering zero_steering;
-    zero_steering.linear[0] = 0;
-    zero_steering.linear[1] = 0;
-    zero_steering.angular = 0;
-
     // run the program as long as the window is open
     while (window.isOpen())
     {
@@ -60,19 +34,19 @@ int main()
         // Move
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             // right key is pressed
-            c1.updateState(right_steering, 0.01);
+            c1.updatePosition(0.1, 0.0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
             // left key is pressed
-            c1.updateState(left_steering, 0.01);
+            c1.updatePosition(-0.1, 0.0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             // up key is pressed
-            c1.updateState(up_steering, 0.01);
+            c1.updatePosition(0.0, -0.1);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             // down key is pressed
-            c1.updateState(down_steering, 0.01);
+            c1.updatePosition(0.0, 0.1);
         }
 
         // AI

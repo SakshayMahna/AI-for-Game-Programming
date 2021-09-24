@@ -24,3 +24,10 @@ void Character::updateState(Steering steering, float time) {
     float* position = state.getPosition();
     entity.setPosition(position[0], position[1]);
 }
+
+// Character Position Update
+void Character::updatePosition(float d_x, float d_y) {
+    // Update position
+    state.updatePosition(d_x, d_y);
+    entity.move(d_x, d_y);
+}
